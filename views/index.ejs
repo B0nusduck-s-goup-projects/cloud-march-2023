@@ -8,24 +8,24 @@
         <link rel="stylesheet" href="stylesheet.css">
         <title>nodejs cloud demonstration</title>
     </head>
-    <body>
-        <h1>product list</h1>
-        <!--add product-->
-        <p>add a new product</p>
+    <body1>
+        <h1>List of reports</h1>
+        <p>Add a new report</p>
         <form action="/products" method="POST">
             <input type="text" placeholder="store location" name="storeLocation">
             <input type="date" name="month">
             <input type="number" placeholder="total revenue" name="totalRevenue">
             <button type="submit">submit</button>
         </form>
-
+ 
         <!--product list-->
+        <p>
         <table class="product">
             <tr>
-                <th>ID</th>
-                <th>store location</th>
-                <th>month</th>
-                <th>total revenue</th>
+                <th>Record ID</th>
+                <th>Store location</th>
+                <th>Date</th>
+                <th>Total revenue</th>
             </tr>
             
             <% for(var i = 0; i < products.length; i++) { %>
@@ -37,5 +37,6 @@
                 </tr>
             <% } %>
         </table>
+        </p>
     </body>
 </html>
