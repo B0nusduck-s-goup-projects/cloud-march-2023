@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="stylesheet.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>nodejs cloud demonstration</title>
     </head>
     <body>
         <h1>product list</h1>
+        <!--add product-->
         <p>add a new product</p>
         <form action="/products" method="POST">
             <input type="text" placeholder="store location" name="storeLocation">
@@ -22,7 +22,7 @@
         <!--product list-->
         <table class="product">
             <tr>
-                <th>record ID</th>
+                <th>ID</th>
                 <th>store location</th>
                 <th>month</th>
                 <th>total revenue</th>

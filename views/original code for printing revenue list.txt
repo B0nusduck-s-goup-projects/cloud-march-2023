@@ -1,8 +1,0 @@
-<% for(var i = 0; i < products.length; i++) { %>
-    <tr class="product">
-        <td class="product"><%= products[i]._id %></td>
-        <td class="product"><%= products[i].storeLocation %></td>
-        <td class="product"><%= products[i].month %></td>
-        <td class="product"><%= products[i].totalRevenue %></td>
-    </tr>
-<% } %>

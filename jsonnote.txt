@@ -1,0 +1,3 @@
+auto fill config for package.json using npm init -y 
+(note: if the cloud host service say cannot find start command, 
+paste this into the script section ""start": "node app.js"")

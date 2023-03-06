@@ -17,12 +17,12 @@ MongoClient.connect(connectionString,{useUnifiedTopology: true})
 
         app.use(bodyParser.urlencoded({ extended: true }));
 
-        app.use(express.static('public'));
-        //gain access to .css file
+        //gain access to resources file
         app.use(express.static('views'));
 
         app.use(bodyParser.json());
         
+        //get data to print to screen
         app.get('/', (req, res) => {
             db.collection('products').find().toArray()
                 .then(results => {
@@ -33,6 +33,7 @@ MongoClient.connect(connectionString,{useUnifiedTopology: true})
                 .catch(/* ... */)
         })
 
+        //post data to dtb
         app.post('/products', (req, res) => {
             productsCollector.insertOne(req.body)
             .then(result => {
@@ -43,7 +44,6 @@ MongoClient.connect(connectionString,{useUnifiedTopology: true})
              })
             .catch(error => console.error(error))
         })
-        //
         
         app.listen(3000, function() {
             console.log('listening on 3000')
