@@ -11,7 +11,7 @@ MongoClient.connect(connectionString,{useUnifiedTopology: true})
         console.log('Database connected!'); 
 
         const db = client.db('asm2-dtb');
-        const productsCollector = db.collection('products');
+        const reportsCollector = db.collection('reports');
 
         app.set('view engine', 'ejs');
 
@@ -24,18 +24,18 @@ MongoClient.connect(connectionString,{useUnifiedTopology: true})
         
         //get data to print to screen
         app.get('/', (req, res) => {
-            db.collection('products').find().toArray()
+            db.collection('reports').find().toArray()
                 .then(results => {
 
                     console.log(results)
-                    res.render('index.ejs', { products: results })
+                    res.render('index.ejs', { reports: results })
                 })
                 .catch(/* ... */)
         })
 
         //post data to dtb
-        app.post('/products', (req, res) => {
-            productsCollector.insertOne(req.body)
+        app.post('/reports', (req, res) => {
+            reportsCollector.insertOne(req.body)
             .then(result => {
                 
                 console.log(result)

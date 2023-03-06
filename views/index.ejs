@@ -12,7 +12,7 @@
         <h1>List of reports</h1>
         <!--add report-->
         <p>Add a new report</p>
-        <form action="/products" method="POST">
+        <form action="/reports" method="POST">
             <input type="text" placeholder="store location" name="storeLocation">
             <input type="date" name="month">
             <input type="number" placeholder="total revenue" name="totalRevenue">
@@ -21,7 +21,7 @@
  
         <!--reccord list-->
         <p>
-        <table class="product">
+        <table class="reports">
             <tr>
                 <th>Record ID</th>
                 <th>Store location</th>
@@ -29,12 +29,12 @@
                 <th>Total revenue</th>
             </tr>
             
-            <% for(var i = 0; i < products.length; i++) { %>
-                <tr class="product">
-                    <td class="product"><%= products[i]._id %></td>
-                    <td class="product"><%= products[i].storeLocation %></td>
-                    <td class="product"><%= products[i].month %></td>
-                    <td class="product"><%= products[i].totalRevenue %></td>
+            <% for(var i = 0; i < reports.length; i++) { %>
+                <tr class="reports">
+                    <td class="reports"><%= reports[i]._id %></td>
+                    <td class="reports"><%= reports[i].storeLocation %></td>
+                    <td class="reports"><%= reports[i].month %></td>
+                    <td class="reports"><%= reports[i].totalRevenue %></td>
                 </tr>
             <% } %>
         </table>
